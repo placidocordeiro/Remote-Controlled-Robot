@@ -35,7 +35,7 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(Robot Robot.c )
+add_executable(Robot src/Robot.c)
 
 pico_set_program_name(Robot "Robot")
 pico_set_program_version(Robot "0.1")
@@ -55,8 +55,8 @@ target_include_directories(Robot PRIVATE
 
 # Add any user requested libraries
 target_link_libraries(Robot 
-        
+        pico_stdlib
+        hardware_pwm
         )
 
 pico_add_extra_outputs(Robot)
-
